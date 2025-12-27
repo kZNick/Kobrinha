@@ -18,7 +18,7 @@ export const Container = styled.div`
     button{
       background-color: transparent;
       border: 2px solid white;
-      padding: 5px;
+      padding: 8px;
       border-radius: 5px;
       color: white;
       transition: 0.5s;
@@ -33,11 +33,28 @@ export const Container = styled.div`
     .Logo{
     width: 120px;
   }
+    .metamasck{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: transparent;
+    padding: 10px;
+    border: 2px solid #db5000ff;
+    border-radius: 15px;
+    color: white; 
+    font-size: 18px;
+    position: absolute;
+    right: 5%;
+    top: 15px;
+      font-family: "Pixelify Sans", sans-serif;
+  }
 `;
 
 export const GameOver = styled.h2`
   color: red;
   margin-top: 20px;
+  font-size: 30px;
 `;
 
 export const ScoreBox = styled.div`

@@ -2,10 +2,15 @@ import SnakeBoard from "../../components/SnakeBoard/SnakeBoard";
 import { useSnakeGame } from "../../hooks/useSnakeGame";
 import { Container, GameOver, ScoreBox } from "../../styles/Game.styles";
 import lgoCobrinha from "../../assets/img/kobrinhaLogo.png"
+import { useContext } from "react";
+import { Web3Context } from "../../context/Web3Context";
+import Fox3D from "../../components/foxLook";
  
 export const Game = () => {
   const { snake, food, gameOver, boardSize, resetGame, score, highScore } =
     useSnakeGame();
+
+    const { account, connect } = useContext(Web3Context);
 
   return (
     <Container>
@@ -13,11 +18,16 @@ export const Game = () => {
       <img src={lgoCobrinha} alt=""  className="Logo"/>
       <SnakeBoard snake={snake} food={food} boardSize={boardSize} />
 
+    <button onClick={connect} className="metamasck">
+    <Fox3D/>
+     {account ? `Connected: ${account.slice(0,6)}...${account.slice(-4)}` : "Connect MetaMask"}
+    </button>
+
 <div className="gameOver">
       {gameOver && (
         <>
           <GameOver>GAME OVER</GameOver>
-          <button onClick={resetGame}>Reiniciar</button>
+          <button onClick={resetGame}>Restart</button>
         </>
       )}
 </div>
