@@ -45,9 +45,18 @@ export const Container = styled.div`
     color: white; 
     font-size: 18px;
     position: absolute;
-    right: 5%;
+    right: 55px;
     top: 15px;
-      font-family: "Pixelify Sans", sans-serif;
+    font-family: "Pixelify Sans", sans-serif;
+  }
+  .home{
+    img{
+      width: 40px;
+      position: absolute;
+      top: 20px;
+      right: 10px;
+      cursor: pointer;
+    }
   }
 `;
 
